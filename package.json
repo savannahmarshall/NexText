@@ -1,26 +1,34 @@
 {
-    "name": "JATE",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server/server.js",
-    "scripts": {
-      "start": "node server/server.js",
-      "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-      "server": "nodemon server/server.js",
-      "build": "cd client && npm run build",
-      "install": "cd client && npm install",
-      "client": "cd client && npm start"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express": "^4.17.1",
-      "if-env": "^1.0.4"
-    },
-    "devDependencies": {
-      "concurrently": "^5.2.0",
-      "nodemon": "^2.0.4"
-    }
+  "name": "JATE",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/server.js",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install",
+    "client": "cd client && npm start",
+    "lint": "eslint .",
+    "test": "jest",
+    "prebuild": "npm run lint",
+    "postbuild": "echo 'Build complete!'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "if-env": "^1.0.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "concurrently": "^5.2.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.35.1",
+    "globals": "^15.9.0",
+    "jest": "^29.7.0",
+    "nodemon": "^2.0.4"
   }
-  
+}
