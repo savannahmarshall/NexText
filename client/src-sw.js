@@ -20,13 +20,11 @@ const pageCache = new CacheFirst({
   ],
 });
 
-// Warm the cache with critical pages
 warmStrategyCache({
   urls: ['/index.html', '/'],
   strategy: pageCache,
 });
 
-// Cache page navigation requests (e.g., when user navigates between pages)
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // Cache JS and CSS files with StaleWhileRevalidate strategy
@@ -53,7 +51,7 @@ registerRoute(
       }),
       new ExpirationPlugin({
         maxEntries: 50, 
-        maxAgeSeconds: 30 * 24 * 60 * 60, // Cache for 30 days
+        maxAgeSeconds: 30 * 24 * 60 * 60,
       }),
     ],
   })
