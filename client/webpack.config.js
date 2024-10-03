@@ -28,14 +28,14 @@ module.exports = () => {
         display: 'standalone',
         icons: [
           {
-            src: path.resolve(__dirname, 'src/images/icon.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons')
+            destination: path.join('assets', 'icon')
           }
         ]
       }),
       new InjectManifest({
-        swSrc: path.resolve(__dirname, './src-sw.js'),
+        swSrc: path.resolve('./src-sw.js'),
         swDest: 'src-sw.js' 
       })
     ],
